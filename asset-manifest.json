@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/web_project_around_react/static/css/main.282f9618.css",
+    "main.js": "/web_project_around_react/static/js/main.d736cf3c.js",
+    "static/js/453.8d428687.chunk.js": "/web_project_around_react/static/js/453.8d428687.chunk.js",
+    "static/media/Inter-SemiBold.woff2": "/web_project_around_react/static/media/Inter-SemiBold.3be6b9e3b22c24eaada7.woff2",
+    "static/media/Inter-Black.woff2": "/web_project_around_react/static/media/Inter-Black.9ed71fbc8206e8069042.woff2",
+    "static/media/Inter-Regular.woff2": "/web_project_around_react/static/media/Inter-Regular.76224c7fa303861462e7.woff2",
+    "static/media/heart_deac.svg": "/web_project_around_react/static/media/heart_deac.3826c074a1b94b101e38.svg",
+    "index.html": "/web_project_around_react/index.html",
+    "static/media/heart_active.svg": "/web_project_around_react/static/media/heart_active.226461bd64622361ffb2.svg",
+    "static/media/edit_avatar.svg": "/web_project_around_react/static/media/edit_avatar.a086f758840ae814ecdece4799d2cf40.svg",
+    "main.282f9618.css.map": "/web_project_around_react/static/css/main.282f9618.css.map",
+    "main.d736cf3c.js.map": "/web_project_around_react/static/js/main.d736cf3c.js.map",
+    "453.8d428687.chunk.js.map": "/web_project_around_react/static/js/453.8d428687.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.282f9618.css",
+    "static/js/main.d736cf3c.js"
+  ]
+}

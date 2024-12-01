@@ -1,5 +1,4 @@
-import React from "react";
-import closeButton from "../images/Close_Icon.png";
+import closeButton from "../../../../../images/Close_Icon.png";
 
 function ImagePopup({ card, onClose }) {
   return (
@@ -8,7 +7,7 @@ function ImagePopup({ card, onClose }) {
         <button className="form__button-close" onClick={onClose}>
           <img
             className="form__button-close-img"
-            alt="close button"
+            alt="Cerrar"
             src={closeButton}
           />
         </button>

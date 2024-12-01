@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from "react";
 import closeButton from "../../../../../images/Close_Icon.png";
-import CurrentUserContext from "../../../../../context/CurrentUserContext";
+import CurrentUserContext from "../../../../../contexts/CurrentUserContext";
 
 function EditAvatar({ isOpen, onClose, onUpdateAvatar }) {
   const userContext = useContext(CurrentUserContext);

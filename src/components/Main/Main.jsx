@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import edit_avatar from "../../images/edit_avatar.svg";
 import edit_button from "../../images/Edit_Button.png";
 import add_button from "../../images/Add_Button.png";
-import CurrentUserContext from "../../context/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import Card from "./components/Card/Card";
 import NewCard from "./components/Popup/NewCard/NewCard";
 import RemoveCard from "./components/Popup/RemoveCard/RemoveCard";

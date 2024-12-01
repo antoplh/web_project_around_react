@@ -7,7 +7,7 @@ import EditAvatar from "./Main/components/Popup/EditAvatar/EditAvatar";
 import EditProfile from "./Main/components/Popup/EditProfile/EditProfile";
 import ImagePopup from "./Main/components/Popup/ImagePopup/ImagePopup";
 import api from "../utils/api";
-import CurrentUserContext from "../context/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});

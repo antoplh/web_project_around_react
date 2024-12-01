@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import closeButton from "../../../../../images/Close_Icon.png";
-import CurrentUserContext from "../../../../../context/CurrentUserContext";
+import CurrentUserContext from "../../../../../contexts/CurrentUserContext";
 
 function EditProfile({ isOpen, onClose, onUpdateUser }) {
   const userContext = useContext(CurrentUserContext);

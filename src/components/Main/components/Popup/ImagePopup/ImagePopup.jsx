@@ -1,24 +1,18 @@
-import closeButton from "../../../../../images/Close_Icon.png";
+// components/ImagePopup.jsx
+import React from "react";
+import closeButton from "../../../../../images/Close_Icon.png"; // Importar closeButton
+import Popup from "../Popup";
 
 function ImagePopup({ card, onClose }) {
   return (
-    <div className={`popup ${card ? "popup_opened" : ""}`} id="image-popup">
-      <div className="popup__container popup-image__container">
-        <button className="form__button-close" onClick={onClose}>
-          <img
-            className="form__button-close-img"
-            alt="Cerrar"
-            src={closeButton}
-          />
-        </button>
-        {card && (
-          <>
-            <img src={card.link} alt={card.name} className="popup__image" />
-            <p className="popup__caption">{card.name}</p>
-          </>
-        )}
-      </div>
-    </div>
+    <Popup isOpen={card} onClose={onClose}>
+      {card && (
+        <>
+          <img src={card.link} alt={card.name} className="popup__image" />
+          <p className="popup__caption">{card.name}</p>
+        </>
+      )}
+    </Popup>
   );
 }
 

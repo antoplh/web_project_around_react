@@ -1,6 +1,8 @@
+// components/EditProfile.jsx
 import React, { useState, useContext, useEffect } from "react";
-import closeButton from "../../../../../images/Close_Icon.png";
+import closeButton from "../../../../../images/Close_Icon.png"; // Importar closeButton
 import CurrentUserContext from "../../../../../contexts/CurrentUserContext";
+import Popup from "../Popup";
 
 function EditProfile({ isOpen, onClose, onUpdateUser }) {
   const userContext = useContext(CurrentUserContext);
@@ -43,9 +45,8 @@ function EditProfile({ isOpen, onClose, onUpdateUser }) {
     setIsLoading(true);
 
     try {
-      // Llamada a la función onUpdateUser que actualiza los datos en el contexto
-      await onUpdateUser({ name: name, about: description });
-      onClose(); // Cerrar el popup después de la actualización
+      await onUpdateUser({ name, about: description });
+      onClose();
     } catch (error) {
       console.error("Error al actualizar el perfil:", error);
     } finally {
@@ -54,58 +55,45 @@ function EditProfile({ isOpen, onClose, onUpdateUser }) {
   };
 
   return (
-    <div
-      className={`popup ${isOpen ? "popup_opened" : ""}`}
-      id="edit-profile-popup"
-    >
-      <div className="popup__container">
-        <button className="form__button-close" onClick={onClose}>
-          <img
-            src={closeButton}
-            className="form__button-close-img"
-            alt="cerrar"
+    <Popup isOpen={isOpen} onClose={onClose} title="Editar perfil">
+      <form className="form" onSubmit={handleSubmit} noValidate>
+        <fieldset className="form__set">
+          <input
+            className="form__input"
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleNameChange}
+            placeholder="Nombre"
+            minLength="2"
+            maxLength="40"
+            required
           />
-        </button>
-        <h3 className="form__title">Editar perfil</h3>
-        <form className="form" onSubmit={handleSubmit} noValidate>
-          <fieldset className="form__set">
-            <input
-              className="form__input"
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleNameChange}
-              placeholder="Nombre"
-              minLength="2"
-              maxLength="40"
-              required
-            />
-            <span className="form__input-error name-input-error"></span>
-            <input
-              className="form__input"
-              type="text"
-              name="about"
-              value={description}
-              onChange={handleDescriptionChange}
-              placeholder="Acerca de mí"
-              minLength="2"
-              maxLength="200"
-              required
-            />
-            <span className="form__input-error about-input-error"></span>
-            <button
-              className={`form__button-save ${
-                isButtonActive ? "form__button-save_active" : ""
-              } ${isLoading ? "form__button-save_disabled" : ""}`}
-              type="submit"
-              disabled={!isButtonActive || isLoading}
-            >
-              {isLoading ? "Guardando..." : "Guardar"}
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+          <span className="form__input-error name-input-error"></span>
+          <input
+            className="form__input"
+            type="text"
+            name="about"
+            value={description}
+            onChange={handleDescriptionChange}
+            placeholder="Acerca de mí"
+            minLength="2"
+            maxLength="200"
+            required
+          />
+          <span className="form__input-error about-input-error"></span>
+          <button
+            className={`form__button-save ${
+              isButtonActive ? "form__button-save_active" : ""
+            } ${isLoading ? "form__button-save_disabled" : ""}`}
+            type="submit"
+            disabled={!isButtonActive || isLoading}
+          >
+            {isLoading ? "Guardando..." : "Guardar"}
+          </button>
+        </fieldset>
+      </form>
+    </Popup>
   );
 }
 

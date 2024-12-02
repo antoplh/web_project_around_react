@@ -5,7 +5,6 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   const { currentUser } = useContext(CurrentUserContext);
 
   // Verificar si el usuario actual dio like a esta tarjeta
-  console.log(card.likes);
   const isLiked = card.likes.some((user) => user._id === currentUser._id);
   const cardLikeButtonClassName = `card__heart ${
     isLiked ? "card__heart_active" : ""

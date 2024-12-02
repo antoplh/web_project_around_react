@@ -88,7 +88,6 @@ function App() {
   // Agregar nueva tarjeta
   const handleAddCard = async (cardData) => {
     try {
-      console.log(cardData);
       const newCard = await api.post("cards", {
         name: cardData.title,
         link: cardData.imageUrl,
